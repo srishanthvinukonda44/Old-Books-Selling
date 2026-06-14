@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Login Form</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#fe4fc1,#bafe00);
+}
+
+.container{
+    width:400px;
+    background:rgb(255, 255, 255);
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+h2{
+    text-align:center;
+    margin-bottom:20px;
+    color:#333333;
+}
+
+/* 3D FACE */
+
+.face{
+    width:120px;
+    height:120px;
+    background:#bfff66;
+    border-radius:50%;
+    margin:0 auto 20px;
+    position:relative;
+    box-shadow:inset -8px -8px 0 rgba(0,0,0,0.1);
+}
+
+.eye{
+    width:15px;
+    height:15px;
+    background:black;
+    border-radius:50%;
+    position:absolute;
+    top:40px;
+}
+
+.eye.left{
+    left:30px;
+}
+
+.eye.right{
+    right:30px;
+}
+
+.smile{
+    width:50px;
+    height:25px;
+    border-bottom:5px solid rgb(0, 0, 0);
+    border-radius:0 0 50px 50px;
+    position:absolute;
+    bottom:25px;
+    left:35px;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border:1px solid #ccc;
+    border-radius:10px;
+    font-size:16px;
+}
+
+.options{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-size:14px;
+    margin-top:5px;
+}
+
+.options a{
+    text-decoration:none;
+    color:#007bff;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    background:#007bff;
+    color:white;
+    border:none;
+    border-radius:10px;
+    margin-top:15px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#0056b3;
+}
+
+.course-page{
+    display:none;
+}
+
+.course-box{
+    background:#f5f5f5;
+    padding:15px;
+    border-radius:15px;
+    margin-top:20px;
+    text-align:center;
+}
+
+.course-box h3{
+    margin:10px 0;
+}
+
+.video-btn{
+    background:#7ba728;
+}
+
+.video-btn:hover{
+    background:#7e1e79;
+}
+
+.video-btn {
+    background:#78a728;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- LOGIN PAGE -->
+
+<div class="container" id="loginPage">
+
+    <!-- 3D FACE -->
+
+    <div class="face">
+        <div class="eye left"></div>
+        <div class="eye right"></div>
+        <div class="smile"></div>
+    </div>
+
+    <h2>Login Form</h2>
+
+    <input type="text" id="username" placeholder="Enter Name">
+
+    <input type="password" id="password" placeholder="Enter Password">
+
+    <div class="options">
+
+        <label>
+            <input type="checkbox">
+            Remember Me
+        </label>
+
+        <a href="#">Forgot Password?</a>
+
+    </div>
+
+    <button onclick="login()">Login</button>
+
+</div>
+
+
+<!-- COURSE PAGE -->
+
+<div class="container course-page" id="coursePage">
+
+    <h2>HTML & CSS Courses</h2>
+
+    <!-- Apna College -->
+
+    <div class="course-box">
+
+        <h3>Apna College - HTML & CSS</h3>
+
+        <a href="https://www.youtube.com/@ApnaCollegeOfficial" target="_blank">
+        
+            <button class="video-btn">
+                Watch Course
+            </button>
+
+        </a>
+
+    </div>
+
+
+    <!-- Swaroop -->
+
+    <div class="course-box"></div>
+
+        <h3>Swaroop - HTML & CSS</h3>
+
+        <a href="https://www.youtube.com/@SwaroopVITB/" target="_blank">
+
+            <button class="video-btn">
+                Watch Course
+            </button>
+        <!--Apna Collage-->
+        </a>
+
+        <div class="course-box"></div>
+
+        <h3>Apna College - JavaScript</h3>
+
+        <a href="https://www.youtube.com/@ApnaCollegeOfficial" target="_blank">
+
+            <button class="video-btn">
+                Watch Course
+            </button>"
+        </a>
+    </div>
+
+</div>
+
+
+<script>
+
+function login(){
+
+    let name = document.getElementById("username").value;
+    let pass = document.getElementById("password").value;
+
+    if(name !== "" && pass !== ""){
+
+        document.getElementById("loginPage").style.display = "none";
+
+        document.getElementById("coursePage").style.display = "block";
+
+    }
+
+    else{
+
+        alert("Please enter username and password");
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
